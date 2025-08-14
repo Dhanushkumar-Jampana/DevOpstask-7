@@ -1,23 +1,27 @@
-1. Run Netdata in Docker
+# Task 7 - Monitor System Resources Using Netdata
 
-docker run -d \
-  --name=netdata \
-  -p 19999:19999 \
-  --cap-add SYS_PTRACE \
-  --security-opt apparmor=unconfined \
-  netdata/netdata
+## Objective
+Install and run Netdata to visualize real-time system and application performance metrics.
 
+## Steps Followed
+1. Pulled and ran Netdata using Docker:
+   ```bash
+   docker run -d \
+     --name=netdata \
+     -p 19999:19999 \
+     --cap-add SYS_PTRACE \
+     --security-opt apparmor=unconfined \
+     netdata/netdata
+2.Accessed the Netdata dashboard at:
 
-2. Open Dashboard
+http://localhost:19999
 
-Go to http://localhost:19999 in your browser.
+3.Monitored:
 
-You’ll see CPU, memory, disk, network, and Docker metrics updating in real-time.
+CPU usage
 
-3. Explore Metrics
+Memory usage
 
-Scroll through charts.
+Disk read/write
 
-Look at Docker containers tab if you have any running.
-
-Check alerts and panel descriptions.
+Docker container metrics
